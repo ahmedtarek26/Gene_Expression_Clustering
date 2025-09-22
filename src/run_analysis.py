@@ -1,4 +1,4 @@
-import argparse
+eimport argparse
 from preprocess import load_and_preprocess
 from model_select import select_gmm_bic, print_bic_results
 from metrics import compute_ari
@@ -19,13 +19,12 @@ def main():
     args = parser.parse_args()
 
     # Load and preprocess data
-    X, y = load_and_preprocess(
-        features_path=args.features,
-        labels_path=args.labels,
-        id_col=args.id_col,
-        n_variable_genes=args.n_variable_genes,
-        n_pca_components=args.n_pca_components,
-        random_state=args.random_state,
+        X, y = load_and_preprocess(
+        args.features,
+        args.labels,
+        args.n_variable_genes,
+        args.n_pca_components,
+        args.random_state,
     )
 
     # Define range of K values to evaluate
@@ -34,7 +33,7 @@ def main():
     # Perform model selection using BIC
     best_model, results = select_gmm_bic(
         X,
-        ks=ks,
+             k_range=ks,
         n_init=args.n_init,
         covariance_type=args.covariance_type,
         random_state=args.random_state,
