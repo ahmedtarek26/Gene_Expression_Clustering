@@ -37,16 +37,14 @@ This repository contains the code and documentation for a course project explori
    - Place the feature matrix in `data/<your_features>.csv` and optional labels in `data/<your_labels>.csv`.
    - Update the file paths in the notebooks or scripts accordingly.
 
-3. **Run EM clustering**:  
-   - Use `python src/em_gmm.py --data data/<your_features>.csv --k_max 10` to fit GMMs with up to 10 components and select the best model by BIC.
-   - Explore the optional `--robust` flag or adjust covariance options for robustness.
+3. **Run the pipeline**:
+   - Use `python src/run_pipeline.py --features data/<your_features>.csv --labels data/<your_labels>.csv` to run the complete clustering pipeline. This script performs preprocessing, GMM model selection with BIC, prints an easy‑to‑read results table, and automatically saves a BIC curve and 2D scatter plot (PCA) in the `figs/` directory.
+   - Adjust `--n-variable-genes`, `--n-pca-components`, `--k-min`, and `--k-max` to suit your dataset and desired complexity.
 
-4. **Inspect results**:  
-   - Check printed BIC values and selected K.
-   - Plot the responsibilities and cluster means to interpret the clusters.
-   - Compare cluster assignments with known subtypes if labels are available.
+4. **Inspect results**:
+   - Open the saved figures in the `figs/` folder. The BIC curve shows how model fit changes with K and highlights the optimal number of clusters. The 2D scatter plot visualises the sample clusters.
+- Check the printed BIC table and ARI to see how well the clustering aligns with known subtypes (if labels are provided).
 
-## License
 
 This project is for educational purposes and distributed under the MIT License. See `LICENSE` for more information (to be added).
 
