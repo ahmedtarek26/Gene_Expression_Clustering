@@ -1,4 +1,4 @@
-eimport argparse
+import argparse
 from preprocess import load_and_preprocess
 from model_select import select_gmm_bic, print_bic_results
 from metrics import compute_ari
