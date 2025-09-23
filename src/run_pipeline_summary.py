@@ -52,6 +52,7 @@ def run_pipeline_summary(
     print("\nBIC results:")
     print_bic_results(results)
 
+
         results = [{'n_components': res.k, 'bic': res.bic} for res in results]
 
     # Print best K and ARI if labels provided
@@ -78,6 +79,10 @@ def run_pipeline_summary(
         print("\nContingency table (clusters vs labels):")
         print(pd.crosstab(df["Cluster"], df["Label"]))
 
+    # Compute and print silhouette score
+    from metrics import compute_silhouette
+    silhouette = compute_silhouette(X, labels_pred)
+    print(f"Mean Silhouette Score: {silhouette:.3f}")
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
