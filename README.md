@@ -47,7 +47,3 @@ This repository contains the code and documentation for a course project explori
 
 
 This project is for educational purposes and distributed under the MIT License. See `LICENSE` for more information (to be added).
-
-## Acknowledgements
-
-This work builds on lecture material from the Probabilistic Machine Learning course, including EM for mixture models, Bayesian model comparison (BIC) and MCMC diagnostics. It is designed to be compatible with a Computational Genomics project, using gene expression data as the application domain.
