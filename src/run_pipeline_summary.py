@@ -52,6 +52,8 @@ def run_pipeline_summary(
     print("\nBIC results:")
     print_bic_results(results)
 
+        results = [{'n_components': res.k, 'bic': res.bic} for res in results]
+
     # Print best K and ARI if labels provided
     best_k = best_model.n_components
     print(f"\nBest number of clusters (lowest BIC): {best_k}")
@@ -80,7 +82,7 @@ def run_pipeline_summary(
     os.makedirs(output_dir, exist_ok=True)
 
     # Plot BIC curve
-    k_vals = [r["n_components"] for r in results]
+    k_vals = [r["n_components"] for r i    k_vals = [res.k for res in results]
     bic_vals = [r["bic"] for r in results]
     plt.figure()
     plt.plot(k_vals, bic_vals, marker="o")
