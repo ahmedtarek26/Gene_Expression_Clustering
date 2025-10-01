@@ -44,6 +44,3 @@ This repository contains the code and documentation for a course project explori
 4. **Inspect results**:
    - Open the saved figures in the `figs/` folder. The BIC curve shows how model fit changes with K and highlights the optimal number of clusters. The 2D scatter plot visualises the sample clusters.
 - Check the printed BIC table and ARI to see how well the clustering aligns with known subtypes (if labels are provided).
-
-
-This project is for educational purposes and distributed under the MIT License. See `LICENSE` for more information (to be added).
