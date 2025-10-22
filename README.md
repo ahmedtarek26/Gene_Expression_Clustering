@@ -1,4 +1,4 @@
-# Bayesian Gaussian Mixture Modeling for Cancer Gene Expression Clustering
+# Bayesian Clustering of Cancer Gene Expressions
 
 
 This repository contains the code and documentation for a course project exploring unsupervised clustering of gene expression profiles using probabilistic models. The goal is to identify tumour subtypes or hidden structure in high‑dimensional transcriptomic data using Gaussian mixture models (GMMs) and principled model selection.
