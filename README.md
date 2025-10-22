@@ -1,13 +1,10 @@
 # Bayesian Clustering of Cancer Gene Expressions
 
-This repository contains the code and documentation for a course project exploring unsupervised clustering of gene expression profiles using probabilistic models. The goal is to identify tumour subtypes or hidden structure in high-dimensional transcriptomic data using Hidden Markov Models (HMMs) with the Expectation–Maximisation (EM) algorithm for parameter estimation.
+This repository contains the code and documentation for a course project exploring unsupervised clustering of gene expression profiles using probabilistic models. The goal is to identify tumour subtypes or hidden structure in high‑dimensional transcriptomic data using Gaussian mixture models (GMMs) and principled model selection.
 
 ## Overview
-- **Hidden Markov Models (HMMs)**:
-I implement the EM algorithm to fit HMMs to normalized gene expression data.
-The **E-step** computes the expected values of latent states (soft state assignments) given the current parameters.
-The **M-step** updates the transition probabilities, emission parameters (means and covariances), and initial state probabilities to maximize the expected complete-data log-likelihood.
-This iterative process increases the likelihood until convergence.
+
+- **Gaussian Mixture Model (GMM)**: We implement the Expectation–Maximisation (EM) algorithm to fit a GMM to normalised expression data. The E‑step computes responsibilities (soft cluster assignments) and the M‑step updates mixture weights, means and covariances. The procedure monotonically increases the likelihood and terminates at convergence.
 
 - **Model Selection**: Choosing the number of clusters \(K\) is critical. We follow a Bayesian approach, computing the Bayesian Information Criterion (BIC) for different values of \(K\) and selecting the model with the highest evidence. The `model_select` module sweeps over a range of cluster numbers and reports the best model according to BIC.
 
